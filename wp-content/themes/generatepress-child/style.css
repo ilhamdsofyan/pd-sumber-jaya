@@ -1,0 +1,19 @@
+/*
+Theme Name: GeneratePress Child
+Theme URI: https://generatepress.com
+Description: Child theme for GeneratePress
+Author: PD Sumber Jaya
+Template: generatepress
+Version: 1.0
+*/
+.menu-cta a {
+  background: #1e73be;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 12px;
+}
+
+.menu-cta a:hover {
+  background: #155a96;
+}

@@ -47,15 +47,10 @@ wp-config-local.php
 !/wp-content/plugins/your-custom-plugin/
 !/wp-content/plugins/disable-xmlrpc.php
 
-# =========================
-# Themes
-# =========================
-# Ignore all themes
-/wp-content/themes/
-
-# Keep only active theme
+# Only active themes
+/wp-content/themes/*
 !/wp-content/themes/generatepress/
-!/wp-content/themes/your-child-theme/
+!/wp-content/themes/generatepress-child/
 
 # =========================
 # Node / Build Tools (kalau ada)
