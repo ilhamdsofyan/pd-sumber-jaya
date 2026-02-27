@@ -44,8 +44,8 @@ $keras_query = new WP_Query(array(
 <!-- Content Intro -->
 <section class="py-16">
     <div class="max-w-[1280px] mx-auto px-6 lg:px-20">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div class="lg:col-span-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
                 <div class="prose prose-lg max-w-none dark:prose-invert">
                     <?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
                 </div>
