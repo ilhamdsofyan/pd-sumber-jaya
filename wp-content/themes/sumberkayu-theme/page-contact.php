@@ -86,7 +86,7 @@ get_header();
                 <h2 class="text-3xl font-black mb-8">Lokasi Kami</h2>
                 <div class="rounded overflow-hidden shadow-xl">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3!2d106.9287!3d-6.1245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPD+Sumber+Jaya!5e0!3m2!1sid!2sid!4v1"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.182434802679!2d106.9212968!3d-6.1061203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a219957db1431%3A0x2f468e1a01ecc895!2sPD%20Sumber%20Jaya%20-%20Jakarta!5e0!3m2!1sid!2sid!4v1772166226048!5m2!1sid!2sid"
                         width="100%"
                         height="450"
                         style="border:0;"
