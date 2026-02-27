@@ -87,7 +87,8 @@ RewriteRule . /wordpress/index.php [L]
             https://www.google-analytics.com \
             https://stats.g.doubleclick.net \
             https://region1.google-analytics.com; \
-        frame-src 'self' \
+        frame-src 'self' blob: \
+            https://www.google.com \
             https://www.googletagmanager.com \
             https://bid.g.doubleclick.net; \
         "
