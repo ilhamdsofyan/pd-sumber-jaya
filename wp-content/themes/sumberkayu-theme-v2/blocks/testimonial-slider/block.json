@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "sumber/testimonial-slider",
+    "title": "Testimonial Slider (V2)",
+    "category": "sumber-blocks",
+    "icon": "format-quote",
+    "description": "Displays Testimonial CPT entries natively.",
+    "attributes": {},
+    "render": "file:./render.php"
+}

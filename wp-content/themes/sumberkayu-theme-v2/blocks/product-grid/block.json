@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "sumber/product-grid",
+    "title": "Product Grid (V2)",
+    "category": "sumber-blocks",
+    "icon": "grid-view",
+    "description": "Displays a dynamic grid of products using the V2 Tailwind styles.",
+    "attributes": {
+        "postsToShow": {
+            "type": "number",
+            "default": 3
+        },
+        "displayTag": {
+            "type": "string",
+            "default": ""
+        },
+        "displayCategory": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:./render.php"
+}

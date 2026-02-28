@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "sumber/location",
+    "title": "Location Info (V2)",
+    "category": "sumber-blocks",
+    "icon": "location",
+    "description": "Displays NAP information and Google Maps embed.",
+    "attributes": {},
+    "render": "file:./render.php"
+}

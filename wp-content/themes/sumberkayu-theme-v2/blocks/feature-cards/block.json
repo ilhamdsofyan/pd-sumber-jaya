@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "sumber/feature-cards",
+    "title": "Feature Cards (V2)",
+    "category": "sumber-blocks",
+    "icon": "grid-view",
+    "description": "3-column feature highlights for PD Sumber Jaya.",
+    "attributes": {},
+    "render": "file:./render.php"
+}

@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "sumber/partner-logos",
+    "title": "Partner Logos (V2)",
+    "category": "sumber-blocks",
+    "icon": "groups",
+    "description": "Displays a horizontal scrolling track of Partner CPT logos.",
+    "attributes": {},
+    "render": "file:./render.php"
+}
