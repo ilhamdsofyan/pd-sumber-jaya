@@ -12,6 +12,8 @@ debug.log
 wp-content/cache/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
+wp-content/plugins/
+!wp-content/plugins/index.php
 
 # Backups
 wp-content/backups/
