@@ -76,11 +76,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
         </div>
         <nav class="hidden md:flex items-center gap-10">
-            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_front_page() ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-            <a class="text-sm font-bold uppercase tracking-wider <?php echo ( is_post_type_archive( 'product' ) || is_singular( 'product' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( get_post_type_archive_link( 'product' ) ); ?>">Produk Kayu</a>
-            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_page( 'about' ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/about/' ) ); ?>">Tentang Kami</a>
-            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_page( 'contact' ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Kontak</a>
-            <a class="text-sm font-bold uppercase tracking-wider <?php echo ( is_post_type_archive( 'project' ) || is_singular( 'project' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>">Projects</a>
+            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_front_page() ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+            <a class="text-sm font-bold uppercase tracking-wider <?php echo ( is_post_type_archive( 'product' ) || is_singular( 'product' ) ) ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( get_post_type_archive_link( 'product' ) ); ?>">Produk Kayu</a>
+            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_page( array( 'about', 'tentang-kami' ) ) ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>">Tentang Kami</a>
+            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_page( array( 'contact', 'kontak' ) ) ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak</a>
+            <a class="text-sm font-bold uppercase tracking-wider <?php echo is_page( array( 'gallery', 'galeri' ) ) ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/galeri/' ) ); ?>">Gallery</a>
+            <a class="text-sm font-bold uppercase tracking-wider <?php echo ( is_post_type_archive( 'project' ) || is_singular( 'project' ) ) ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>">Projects</a>
         </nav>
         <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener" class="hidden sm:inline-block bg-primary text-white px-6 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-blue-700 transition-all">
             Hubungi Kami
