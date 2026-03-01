@@ -216,23 +216,7 @@ function sumberkayu_register_project_cpt() {
 }
 add_action( 'init', 'sumberkayu_register_project_cpt' );
 
-/**
- * Register Gallery CPT
- */
-function sumberkayu_register_gallery_cpt() {
-    register_post_type( 'gallery', array(
-        'labels' => array(
-            'name'          => 'Gallery Items',
-            'singular_name' => 'Gallery Item',
-        ),
-        'public'      => true,
-        'has_archive' => false,
-        'supports'    => array( 'title', 'thumbnail', 'custom-fields' ),
-        'menu_icon'   => 'dashicons-format-image',
-        'show_in_rest' => true,
-    ) );
-}
-add_action( 'init', 'sumberkayu_register_gallery_cpt' );
+// Registration removed for Gallery CPT. User manages gallery via WP Media native tools.
 
 /**
  * Register Taxonomies
@@ -265,6 +249,43 @@ function sumberkayu_register_taxonomies() {
     ) );
 }
 add_action( 'init', 'sumberkayu_register_taxonomies' );
+
+// ============================================================
+// MEDIA LIBRARY SECIFICATIONS
+// ============================================================
+
+/**
+ * Add Checkbox to Media Library Attachment Details
+ */
+function sumberkayu_add_gallery_attachment_field( $form_fields, $post ) {
+    $value = get_post_meta( $post->ID, '_tampil_di_galeri', true );
+    $checked = ( $value == '1' ) ? 'checked="checked"' : '';
+    
+    $html = '<label style="display:flex; align-items:center; gap:8px;">';
+    $html .= '<input type="checkbox" name="attachments[' . $post->ID . '][tampil_di_galeri]" id="attachments[' . $post->ID . '][tampil_di_galeri]" value="1" ' . $checked . ' />';
+    $html .= 'Ya, tampilkan di halaman Galeri public</label>';
+    
+    $form_fields['tampil_di_galeri'] = array(
+        'label' => 'Tampil di Galeri?',
+        'input' => 'html',
+        'html'  => $html,
+    );
+    return $form_fields;
+}
+add_filter( 'attachment_fields_to_edit', 'sumberkayu_add_gallery_attachment_field', 10, 2 );
+
+/**
+ * Save Checkbox in Media Library
+ */
+function sumberkayu_save_gallery_attachment_field( $post, $attachment ) {
+    if ( isset( $attachment['tampil_di_galeri'] ) ) {
+        update_post_meta( $post['ID'], '_tampil_di_galeri', '1' );
+    } else {
+        delete_post_meta( $post['ID'], '_tampil_di_galeri' );
+    }
+    return $post;
+}
+add_filter( 'attachment_fields_to_save', 'sumberkayu_save_gallery_attachment_field', 10, 2 );
 
 // ============================================================
 // META BOXES
