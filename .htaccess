@@ -37,7 +37,7 @@ RewriteBase /wordpress
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteRule . /wordpress/index.php [L]
 </IfModule>
 # END WordPress
 
@@ -65,7 +65,9 @@ RewriteRule . /index.php [L]
             https://googleads.g.doubleclick.net \
             https://tpc.googlesyndication.com \
             https://www.google.com \
-            https://www.gstatic.com; \
+            https://www.gstatic.com \
+            https://yoast.com \
+            https://my.yoast.com; \
         img-src 'self' data: https: \
             https://ps.w.org \
             https://www.google-analytics.com \
@@ -85,7 +87,12 @@ RewriteRule . /index.php [L]
         connect-src 'self' https: \
             https://www.google-analytics.com \
             https://stats.g.doubleclick.net \
-            https://region1.google-analytics.com; \
+            https://region1.google-analytics.com \
+            https://secure.gravatar.com \
+            https://www.gravatar.com \
+            https://yoast.com \
+            https://my.yoast.com \
+            https://api.yoast.com; \
         frame-src 'self' blob: https: \
             https://www.google.com \
             https://www.googletagmanager.com \
