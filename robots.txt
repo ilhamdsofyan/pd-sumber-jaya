@@ -1,0 +1,28 @@
+User-agent: *
+# ALLOW CRITICAL RENDERING ASSETS
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/
+Allow: /wp-content/plugins/
+Allow: /wp-admin/admin-ajax.php
+
+# PROTECT CRAWL BUDGET (Disallow unnecessary/duplicate areas)
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+Disallow: /?s=
+Disallow: /search/
+Disallow: /*/feed/
+Disallow: /*/embed/
+Disallow: /*/trackback/
+Disallow: /*?*filter=
+Disallow: /*?*sort=
+
+# EXPLICIT ALLOW FOR CORE PILLARS
+Allow: /harga-kayu-jakarta-utara/
+Allow: /products/
+Allow: /projects/
+Allow: /tentang-kami/
+Allow: /kontak/
+Allow: /galeri/
+
+Sitemap: https://sumberkayu.com/sitemap_index.xml

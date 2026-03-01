@@ -9,7 +9,22 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="<?php echo esc_attr( sumberkayu_get_meta_description() ); ?>" />
-    <meta name="robots" content="index, follow" />
+    <?php
+    /**
+     * SEO Indexing Controls
+     */
+    $robots = 'index, follow';
+    if ( is_search() || is_404() || is_author() || is_date() || is_tag() || is_paged() ) {
+        $robots = 'noindex, follow';
+    }
+    if ( is_singular() ) {
+        $noindex = get_post_meta( get_the_ID(), '_seo_noindex', true );
+        if ( $noindex === '1' ) {
+            $robots = 'noindex, nofollow';
+        }
+    }
+    echo '<meta name="robots" content="' . esc_attr( $robots ) . '">' . "\n";
+    ?>
 
     <?php if ( is_singular() ) : ?>
     <!-- Open Graph -->

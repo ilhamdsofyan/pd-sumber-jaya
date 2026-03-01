@@ -27,6 +27,7 @@ define( 'SUMBERKAYU_GTM_ID', 'GTM-WZN4JCZT' );
 require_once SUMBERKAYU_DIR . '/inc/custom-post-types.php';
 require_once SUMBERKAYU_DIR . '/inc/schema-inject.php';
 require_once SUMBERKAYU_DIR . '/inc/block-registry.php';
+require_once SUMBERKAYU_DIR . '/inc/seo-sitemap.php';
 
 /**
  * Theme Setup
@@ -315,6 +316,7 @@ function sumberkayu_seo_meta_box_html( $post ) {
     $seo_desc  = get_post_meta( $post->ID, '_seo_description', true );
     $seo_h1    = get_post_meta( $post->ID, '_seo_h1', true );
     $seo_schema = get_post_meta( $post->ID, '_seo_schema', true );
+    $seo_noindex = get_post_meta( $post->ID, '_seo_noindex', true );
     ?>
     <table class="form-table">
         <tr>
@@ -333,6 +335,15 @@ function sumberkayu_seo_meta_box_html( $post ) {
             <th><label for="seo_schema">Schema JSON-LD</label></th>
             <td><textarea id="seo_schema" name="seo_schema" rows="6" class="large-text" placeholder='{"@context":"https://schema.org",...}'><?php echo esc_textarea( $seo_schema ); ?></textarea></td>
         </tr>
+        <tr>
+            <th>Indexing</th>
+            <td>
+                <label>
+                    <input type="checkbox" name="seo_noindex" value="1" <?php checked( $seo_noindex, '1' ); ?> />
+                    Jangan indeks halaman ini (Noindex)
+                </label>
+            </td>
+        </tr>
     </table>
     <?php
 }
@@ -343,10 +354,20 @@ function sumberkayu_save_seo_meta( $post_id ) {
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
     if ( ! current_user_can( 'edit_post', $post_id ) ) return;
 
-    $fields = array( 'seo_title' => '_seo_title', 'seo_description' => '_seo_description', 'seo_h1' => '_seo_h1', 'seo_schema' => '_seo_schema' );
+    $fields = array( 
+        'seo_title' => '_seo_title', 
+        'seo_description' => '_seo_description', 
+        'seo_h1' => '_seo_h1', 
+        'seo_schema' => '_seo_schema',
+        'seo_noindex' => '_seo_noindex'
+    );
     foreach ( $fields as $field => $meta_key ) {
         if ( isset( $_POST[ $field ] ) ) {
             update_post_meta( $post_id, $meta_key, sanitize_text_field( $_POST[ $field ] ) );
+        } else {
+            if ( $field === 'seo_noindex' ) {
+                delete_post_meta( $post_id, $meta_key );
+            }
         }
     }
 }
