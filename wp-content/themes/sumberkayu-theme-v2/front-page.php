@@ -22,7 +22,7 @@ get_header();
                 <?php echo esc_html( sumberkayu_get_h1() ); ?>
             </h1>
             <p class="text-gray-200 text-lg md:text-xl font-normal leading-relaxed mb-10 max-w-2xl">
-                Kami menyediakan berbagai jenis kayu, antara lain Meranti, Kamper, Bengkirai, Damar Laut, Merbau, dan Ulin, dengan pasokan stabil dan spesifikasi jelas. Setiap pemesanan ditangani secara profesional untuk memastikan komitmen volume, kualitas, dan ketepatan pengiriman sesuai kebutuhan proyek Anda.
+                Kami menyediakan berbagai jenis kayu, antara lain Meranti, Kamper, Bengkirai, Damar Laut, Merbau, dan Ulin, dengan pasokan stabil dan spesifikasi jelas. Setiap pemesanan ditangani secara profesional untuk memastikan komitmen volume, kualitas, dan ketepatan pengiriman sesuai kebutuhan proyek Anda. Kayu bicara bagus, harga nego langsung kirim
             </p>
             <div class="flex flex-wrap gap-4">
                 <a href="<?php echo esc_url( sumberkayu_phone_url() ); ?>" class="bg-primary hover:bg-blue-700 text-white flex items-center gap-3 px-8 py-4 rounded font-bold text-base transition-all group" data-tracking="phone-call">
@@ -86,21 +86,49 @@ get_header();
     <div class="max-w-[1280px] mx-auto px-6 lg:px-20">
         <div class="flex items-center justify-between mb-8">
             <h3 class="text-primary text-sm font-black uppercase tracking-wider">Partners</h3>
+            
+            <?php
+            $partners = new WP_Query([
+                'post_type'      => 'partner',
+                'posts_per_page' => -1,
+                'post_status'    => 'publish',
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC'
+            ]);
+            ?>
+
+            <?php if ($partners->have_posts() && $partners->post_count > 4): ?>
             <div class="flex items-center gap-3">
-                <button id="partners-prev" class="hidden md:inline-flex bg-gray-100 p-2 rounded">&#8249;</button>
-                <button id="partners-next" class="hidden md:inline-flex bg-gray-100 p-2 rounded">&#8250;</button>
+                <button id="partners-prev" class="hidden md:inline-flex bg-gray-100 p-2 rounded hover:bg-gray-200 transition" aria-label="Previous partners">&#8249;</button>
+                <button id="partners-next" class="hidden md:inline-flex bg-gray-100 p-2 rounded hover:bg-gray-200 transition" aria-label="Next partners">&#8250;</button>
             </div>
+            <?php endif; ?>
         </div>
-        <div class="partners-track overflow-x-auto scroll-smooth flex gap-6 py-4">
-            <img src="<?php echo esc_url( SUMBERKAYU_URI . '/assets/images/partners/korindo-heavy-industry.webp' ); ?>" alt="PT Korindo Heavy Industry" title="PT Korindo Heavy Industry" class="h-16 mr-5 object-contain" loading="lazy" />
-            <img src="<?php echo esc_url( SUMBERKAYU_URI . '/assets/images/partners/kopi-nako.png' ); ?>" alt="Kopi Nako" title="Kopi Nako" class="h-16 mr-5 object-contain" loading="lazy" />
-            <img src="<?php echo esc_url( SUMBERKAYU_URI . '/assets/images/partners/bakrie-pipe-industries.webp' ); ?>" alt="PT Bakrie Pipe Industries" title="PT Bakrie Pipe Industries" class="h-16 mr-5 object-contain" loading="lazy" />
-            <img src="<?php echo esc_url( SUMBERKAYU_URI . '/assets/images/partners/pt-alam-sutera.png' ); ?>" alt="PT Alam Sutra" title="PT Alam Sutra" class="h-16 mr-5 object-contain" loading="lazy" />
-            <img src="<?php echo esc_url( SUMBERKAYU_URI . '/assets/images/partners/gunung-raja-paksi.png' ); ?>" alt="PT Gunung Raja Paksi" title="PT Gunung Raja Paksi" class="h-16 mr-5 object-contain" loading="lazy" />
-            <img src="<?php echo esc_url( SUMBERKAYU_URI . '/assets/images/partners/porter-rekayasa-unggul.png' ); ?>" alt="PT Porter Rekayasa Unggul" title="PT Porter Rekayasa Unggul" class="h-16 mr-5 object-contain" loading="lazy" />
+        
+        <div class="partners-track overflow-x-auto scroll-smooth flex gap-6 py-4 items-center">
+            <?php 
+            if ($partners->have_posts()):
+                while ($partners->have_posts()): $partners->the_post(); 
+                    if (has_post_thumbnail()):
+            ?>
+                <?php the_post_thumbnail('medium', [
+                    'class' => 'h-16 mr-5 object-contain opacity-70 hover:opacity-100 transition-opacity flex-shrink-0', 
+                    'loading' => 'lazy',
+                    'title' => get_the_title(),
+                    'alt' => get_the_title()
+                ]); ?>
+            <?php 
+                    endif;
+                endwhile;
+                wp_reset_postdata();
+            else: 
+            ?>
+                <p class="text-gray-500">Belum ada partner.</p>
+            <?php endif; ?>
         </div>
     </div>
 </section>
+
 
 <?php get_template_part( 'template-parts/testimonials' ); ?>
 

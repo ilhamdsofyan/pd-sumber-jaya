@@ -34,7 +34,7 @@
                     <h2 class="text-white text-xl font-black uppercase tracking-tighter">PD Sumber Jaya</h2>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                    Supplier utama kayu konstruksi sejak 1994. Melayani kebutuhan material kayu partai besar untuk proyek infrastruktur dan properti.
+                    Supplier utama kayu konstruksi sejak 1994. Melayani kebutuhan material kayu partai besar untuk proyek infrastruktur dan properti. Kayu bicara bagus, harga nego langsung kirim
                 </p>
             </div>
             <div>
