@@ -460,9 +460,9 @@ function sumberkayu_breadcrumbs() {
  */
 function sumberkayu_whatsapp_url( $message = '' ) {
     $url = 'https://api.whatsapp.com/send/?phone=' . SUMBERKAYU_WHATSAPP . '&type=phone_number&app_absent=0';
-    if ( $message ) {
-        $url .= '&text=' . urlencode( $message );
-    }
+    // if ( $message ) {
+    //     $url .= '&text=' . urlencode( $message );
+    // }
     return $url;
 }
 
