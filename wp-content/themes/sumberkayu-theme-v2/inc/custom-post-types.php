@@ -61,3 +61,31 @@ function sumberkayu_v2_register_partner_cpt() {
     ) );
 }
 add_action( 'init', 'sumberkayu_v2_register_partner_cpt' );
+/**
+ * Add Role Meta Box to Testimonials
+ */
+function sumberkayu_v2_add_testimonial_meta() {
+    add_meta_box(
+        'testimonial_role',
+        'Client Role / Position',
+        'sumberkayu_v2_testimonial_meta_html',
+        'testimonial',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'sumberkayu_v2_add_testimonial_meta');
+
+function sumberkayu_v2_testimonial_meta_html($post) {
+    $role = get_post_meta($post->ID, '_testimonial_role', true);
+    ?>
+    <input type="text" name="testimonial_role" value="<?php echo esc_attr($role); ?>" class="widefat" placeholder="e.g. CEO, PT ABC" />
+    <?php
+}
+
+function sumberkayu_v2_save_testimonial_meta($post_id) {
+    if (isset($_POST['testimonial_role'])) {
+        update_post_meta($post_id, '_testimonial_role', sanitize_text_field($_POST['testimonial_role']));
+    }
+}
+add_action('save_post_testimonial', 'sumberkayu_v2_save_testimonial_meta');
