@@ -128,7 +128,7 @@ $keras_query = new WP_Query(array(
                 <div class="bg-primary text-white p-8 rounded shadow-lg">
                     <h3 class="text-2xl font-black mb-4">Request Penawaran</h3>
                     <p class="mb-6 opacity-90">Kirimkan spesifikasi dan volume kayu yang Anda butuhkan (BOQ). Kami akan menghitungkan harga terbaik dalam 1x24 jam.</p>
-                    <a href="<?php echo esc_url( sumberkayu_whatsapp_url( 'Halo, saya ingin request penawaran kayu untuk proyek' ) ); ?>" target="_blank" rel="noopener" class="block bg-white text-primary text-center py-4 rounded font-bold hover:bg-gray-100 transition-colors uppercase tracking-wider text-sm" data-tracking="whatsapp-click">
+                    <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener" class="block bg-white text-primary text-center py-4 rounded font-bold hover:bg-gray-100 transition-colors uppercase tracking-wider text-sm" data-tracking="whatsapp-click">
                         Chat via WhatsApp
                     </a>
                 </div>

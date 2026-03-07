@@ -83,7 +83,7 @@ $img_url = $image_path ? SUMBERKAYU_URI . '/' . $image_path : ( has_post_thumbna
                         <span class="material-symbols-outlined">call</span>
                         Hubungi: <?php echo esc_html( SUMBERKAYU_PHONE_DISPLAY ); ?>
                     </a>
-                    <a href="<?php echo esc_url( sumberkayu_whatsapp_url( 'Halo, saya tertarik dengan ' . get_the_title() ) ); ?>" target="_blank" rel="noopener" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded font-bold text-base transition-colors flex items-center justify-center gap-2" data-tracking="whatsapp-click">
+                    <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded font-bold text-base transition-colors flex items-center justify-center gap-2" data-tracking="whatsapp-click">
                         <span class="material-symbols-outlined">chat</span>
                         Chat WhatsApp
                     </a>

@@ -14,7 +14,7 @@ $wa_text     = $args['wa_text'] ?? 'Halo, saya ingin berkonsultasi tentang produ
         <h2 class="text-4xl font-black mb-6"><?php echo esc_html( $cta_title ); ?></h2>
         <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto"><?php echo esc_html( $cta_message ); ?></p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="<?php echo esc_url( sumberkayu_whatsapp_url( $wa_text ) ); ?>" target="_blank" rel="noopener"
+            <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener"
                class="bg-white text-primary px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-3" data-tracking="whatsapp-click">
                 <span class="material-symbols-outlined">chat</span>
                 Hubungi via WhatsApp

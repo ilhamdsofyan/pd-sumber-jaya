@@ -39,7 +39,7 @@ get_header();
                         </div>
                         <div>
                             <h3 class="font-black text-lg mb-1">WhatsApp</h3>
-                            <a href="<?php echo esc_url( sumberkayu_whatsapp_url( 'Halo, saya ingin bertanya tentang produk kayu' ) ); ?>" target="_blank" rel="noopener" class="text-green-600 font-bold text-xl hover:underline" data-tracking="whatsapp-click">
+                            <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener" class="text-green-600 font-bold text-xl hover:underline" data-tracking="whatsapp-click">
                                 <?php echo esc_html( SUMBERKAYU_PHONE_DISPLAY ); ?>
                             </a>
                         </div>
