@@ -62,6 +62,7 @@ add_action( 'after_setup_theme', 'sumberkayu_setup' );
 function sumberkayu_scripts() {
     // Main Tailwind CSS
     wp_enqueue_style( 'sumberkayu-styles', SUMBERKAYU_URI . '/assets/css/styles.css', array(), SUMBERKAYU_VERSION );
+    wp_enqueue_style( 'sumberkayu-nav-dropdown', SUMBERKAYU_URI . '/assets/css/nav-dropdown.css', array( 'sumberkayu-styles' ), SUMBERKAYU_VERSION );
 
     // Google Fonts
     wp_enqueue_style( 'google-fonts-inter', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap', array(), null );
