@@ -64,8 +64,8 @@ if ( ! is_wp_error( $price_terms ) && ! empty( $price_terms ) ) {
 <!-- Content Intro -->
 <section class="py-16">
     <div class="max-w-[1280px] mx-auto px-6 lg:px-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
+        <div class="md:flex md:gap-4">
+            <div class="md:w-[70%]">
                 <div class="prose prose-lg max-w-none dark:prose-invert">
                     <?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
                 </div>
@@ -126,8 +126,8 @@ if ( ! is_wp_error( $price_terms ) && ! empty( $price_terms ) ) {
             </div>
 
             <!-- Sidebar -->
-            <aside>
-                <div class="space-y-8 lg:w-1/2">
+            <aside class="mt-12 md:mt-0 md:w-[30%]">
+                <div class="space-y-8">
                     <div class="bg-primary text-white p-8 rounded shadow-lg">
                         <h3 class="text-2xl font-black mb-4">Request Penawaran</h3>
                         <p class="mb-6 opacity-90">Kirimkan spesifikasi dan volume kayu yang Anda butuhkan (BOQ). Kami akan menghitungkan harga terbaik dalam 1x24 jam.</p>
