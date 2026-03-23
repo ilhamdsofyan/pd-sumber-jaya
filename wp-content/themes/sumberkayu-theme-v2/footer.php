@@ -14,8 +14,8 @@
         <ul class="space-y-3">
             <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="font-bold <?php echo is_front_page() ? 'text-primary' : ''; ?>">Home</a></li>
             <li><a href="<?php echo esc_url( get_post_type_archive_link( 'product' ) ); ?>" class="font-bold <?php echo ( is_post_type_archive( 'product' ) || is_singular( 'product' ) ) ? 'text-primary' : ''; ?>">Produk Kayu</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="font-bold <?php echo is_page( array( 'about', 'tentang-kami' ) ) ? 'text-primary' : ''; ?>">Tentang Kami</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="font-bold <?php echo is_page( array( 'contact', 'kontak' ) ) ? 'text-primary' : ''; ?>">Kontak</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="font-bold <?php echo is_page( array( 'about', 'tentang-kami' ) ) ? 'text-primary' : ''; ?>">Tentang Kami</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>" class="font-bold <?php echo is_page( array( 'contact', 'kontak' ) ) ? 'text-primary' : ''; ?>">Kontak</a></li>
             <li><a href="<?php echo esc_url( home_url( '/galeri/' ) ); ?>" class="font-bold <?php echo is_page( array( 'gallery', 'galeri' ) ) ? 'text-primary' : ''; ?>">Gallery</a></li>
             <li><a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="font-bold <?php echo ( is_post_type_archive( 'project' ) || is_singular( 'project' ) ) ? 'text-primary' : ''; ?>">Projects</a></li>
         </ul>
@@ -42,8 +42,8 @@
                 <ul class="space-y-4 text-sm font-medium">
                     <li><a class="<?php echo is_front_page() ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/' ) ); ?>">Beranda</a></li>
                     <li><a class="<?php echo ( is_post_type_archive( 'product' ) || is_singular( 'product' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( get_post_type_archive_link( 'product' ) ); ?>">Produk Kayu</a></li>
-                    <li><a class="<?php echo is_page( array( 'about', 'tentang-kami' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/about/' ) ); ?>">Tentang Kami</a></li>
-                    <li><a class="<?php echo is_page( array( 'contact', 'kontak' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Kontak</a></li>
+                    <li><a class="<?php echo is_page( array( 'about', 'tentang-kami' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>">Tentang Kami</a></li>
+                    <li><a class="<?php echo is_page( array( 'contact', 'kontak' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak</a></li>
                     <li><a class="<?php echo is_page( array( 'gallery', 'galeri' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/galeri/' ) ); ?>">Gallery</a></li>
                     <li><a class="<?php echo ( is_post_type_archive( 'project' ) || is_singular( 'project' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>">Projects</a></li>
                     <li><a class="<?php echo is_page( array( 'harga-kayu', 'harga-kayu-jakarta-utara' ) ) ? 'text-primary' : 'hover:text-primary'; ?> transition-colors" href="<?php echo esc_url( home_url( '/harga-kayu/' ) ); ?>">Harga Kayu</a></li>
