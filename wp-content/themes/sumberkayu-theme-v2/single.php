@@ -37,11 +37,13 @@ while ( have_posts() ) : the_post();
                 <?php
                 $money_pages = array(
                     'Harga Kayu' => '/harga-kayu/',
-                    'Kayu Meranti' => '/products/kayu-meranti/',
-                    'Kayu Kamper' => '/products/kayu-kamper/',
-                    'Kayu Bengkirai' => '/products/kayu-bengkirai/',
-                    'Kayu Merbau' => '/products/kayu-merbau/',
-                    'Kayu Ulin' => '/products/kayu-ulin/',
+                    'Kayu Ulin' => '/products/balok-kayu-ulin-8x12x400-cm/',
+                    'Kayu Merbau' => '/products/decking-kayu-merbau-6x12x400-cm/',
+                    'Kayu Meranti' => '/products/papan-kayu-meranti-8x10x400-cm/',
+                    'Kayu Kamper' => '/products/balok-kayu-kamper-6x12x400-cm/',
+                    'Kayu Damar Laut' => '/products/papan-kayu-damar-laut-3x20x400-cm/',
+                    'Kayu Borneo' => '/products/balok-kayu-borneo-5x10x400-cm/',
+                    'Kayu Bengkirai' => '/products/balok-kayu-bengkirai-6x12x400-cm/',
                 );
                 foreach ( $money_pages as $label => $path ) :
                 ?>
