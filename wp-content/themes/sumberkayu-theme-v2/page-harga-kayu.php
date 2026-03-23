@@ -64,8 +64,8 @@ if ( ! is_wp_error( $price_terms ) && ! empty( $price_terms ) ) {
 <!-- Content Intro -->
 <section class="py-16">
     <div class="max-w-[1280px] mx-auto px-6 lg:px-20">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div class="lg:col-span-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
                 <div class="prose prose-lg max-w-none dark:prose-invert">
                     <?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
                 </div>
@@ -126,35 +126,37 @@ if ( ! is_wp_error( $price_terms ) && ! empty( $price_terms ) ) {
             </div>
 
             <!-- Sidebar -->
-            <aside class="space-y-8 lg:col-span-4">
-                <div class="bg-primary text-white p-8 rounded shadow-lg">
-                    <h3 class="text-2xl font-black mb-4">Request Penawaran</h3>
-                    <p class="mb-6 opacity-90">Kirimkan spesifikasi dan volume kayu yang Anda butuhkan (BOQ). Kami akan menghitungkan harga terbaik dalam 1x24 jam.</p>
-                    <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener" class="block bg-white text-primary text-center py-4 rounded font-bold hover:bg-gray-100 transition-colors uppercase tracking-wider text-sm" data-tracking="whatsapp-click">
-                        Chat via WhatsApp
-                    </a>
-                </div>
+            <aside>
+                <div class="space-y-8 lg:w-1/2">
+                    <div class="bg-primary text-white p-8 rounded shadow-lg">
+                        <h3 class="text-2xl font-black mb-4">Request Penawaran</h3>
+                        <p class="mb-6 opacity-90">Kirimkan spesifikasi dan volume kayu yang Anda butuhkan (BOQ). Kami akan menghitungkan harga terbaik dalam 1x24 jam.</p>
+                        <a href="<?php echo esc_url( sumberkayu_whatsapp_url() ); ?>" target="_blank" rel="noopener" class="block bg-white text-primary text-center py-4 rounded font-bold hover:bg-gray-100 transition-colors uppercase tracking-wider text-sm" data-tracking="whatsapp-click">
+                            Chat via WhatsApp
+                        </a>
+                    </div>
 
-                <div class="bg-white dark:bg-background-dark p-8 rounded shadow border border-gray-200 dark:border-white/10">
-                    <h3 class="text-xl font-black mb-4 underline decoration-primary decoration-4">Kenapa Beli di Kami?</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary">check_circle</span>
-                            <span class="text-sm font-bold">Harga Supplier Langsung</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary">check_circle</span>
-                            <span class="text-sm font-bold">Stok Selalu Ready</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary">check_circle</span>
-                            <span class="text-sm font-bold">Siap Kirim se-Jabodetabek</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary">check_circle</span>
-                            <span class="text-sm font-bold">Kualitas Terjamin</span>
-                        </li>
-                    </ul>
+                    <div class="bg-white dark:bg-background-dark p-8 rounded shadow border border-gray-200 dark:border-white/10">
+                        <h3 class="text-xl font-black mb-4 underline decoration-primary decoration-4">Kenapa Beli di Kami?</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-sm font-bold">Harga Supplier Langsung</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-sm font-bold">Stok Selalu Ready</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-sm font-bold">Siap Kirim se-Jabodetabek</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-sm font-bold">Kualitas Terjamin</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </aside>
         </div>
